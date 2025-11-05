@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/fundopp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(4, 150px);
+    gap: 10px;
+    grid-template-areas: 'title title title'
+        '. result .'
+        'aside cartas content'
+        'aside cartas content';
+}
+
+.result {
+    border-radius: 10px;
+    background-color: #76ff98;
+    display: flex;
+    grid-area: result;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px;
+    padding-top: 2%;
+    grid-area: title;
+    text-align: center;
+    color: aliceblue;
+}
+
+h2 {
+    margin: 5%;
+    flex-direction: row;
+    color: green
+}
+
+.main {
+    position: relative;
+    grid-area: cartas;
+    display: flex;
+}
+
+.grid {
+    position: absolute;
+    padding: 10px;
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 500px) {
+    .result {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
